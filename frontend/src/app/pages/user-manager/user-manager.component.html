@@ -1,15 +1,17 @@
 <div class="prose mx-auto p-4">
-    <button class="bg-primary text-white p-1 px-2 rounded-md" [routerLink]="['dashboard']">Back</button>
+    <button class="bg-primary text-white p-1 px-2 rounded-md" [routerLink]="['/dashboard']">Back</button>
 
-    <h2 class="shadow-md p-4 rounded-lg">List of Users</h2>
+    <h2 class="shadow-md bg-primary text-white p-4 rounded-lg">List of Users</h2>
 
     <div>
-        <div class="flex justify-between shadow-md p-4 rounded-lg space-y-4">
+        <div class="">
             @for (user of userList; track user.id) {
-                <div class="font-medium">{{user.username}}</div>
-                <div class="flex space-x-3">
-                    <div class="text-sm translate-y-2">Created at {{user.created_at | date}}</div>
-                    <button class="bg-primary text-white p-1 px-2 rounded-md">Blacklist</button>
+                <div class="flex justify-between shadow-md p-4 rounded-lg space-y-4">
+                    <div class="font-medium">{{user.username}}</div>
+                    <div class="flex space-x-3">
+                        <div class="text-sm translate-y-2">Created at {{user.created_at | date}}</div>
+                        <button class="bg-primary text-white p-1 px-2 rounded-md">Blacklist</button>
+                    </div>
                 </div>
             }
         </div>

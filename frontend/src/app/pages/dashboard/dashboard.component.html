@@ -1,4 +1,10 @@
-<div class="prose">
+<div class="prose shadow-md p-6 mx-auto mt-32">
     <h1>Welcome, {{username}}!</h1>
-    <button class="bg-primary text-white rounded-md p-1 px-2" (click)="logout()">Logout</button>
+
+    <div class="space-x-2">        
+        <button class="bg-primary text-white rounded-md p-1 px-2" (click)="logout()">Logout</button>
+        @if(role == 'admin') {
+            <button class="bg-primary text-white rounded-md p-1 px-2" [routerLink]="['/admin']">Manage Users</button>
+        }
+    </div>
 </div>

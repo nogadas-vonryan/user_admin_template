@@ -25,9 +25,6 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    console.log("Pressed");
-    console.log('Form Submitted', this.loginForm.value);
-
     this.http.post<JWTResponse>('http://localhost:8000/api/login', this.loginForm.value).subscribe({
       next: (response: JWTResponse) => {
         console.log('Login successful', response);
